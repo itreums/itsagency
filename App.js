@@ -151,7 +151,10 @@ export default{
         </div>
         <div class="panel">
             <button>profile</button>
-            <button @click="tooggleCart">cart</button>
+            <button @click="tooggleCart" >
+                <span v-if="selectedGoods.length==0">cart</span>
+                <span v-else>{{selectedGoods.length}}</span>
+            </button>
 
         </div>
     </header>
