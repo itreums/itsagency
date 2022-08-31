@@ -164,7 +164,7 @@ export default{
             </div>
         </div>
     </header>
-    <div class="slider">
+    <div class="slider-banner">
         <img src="../public/img/slide_1.png" alt="">
     </div>
     <div class="d-flex container">
