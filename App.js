@@ -14,7 +14,7 @@ export default{
             length:'',
             selected:'sortUpToLowPrice',
             filters:[],
-            cartIsClosed:true,
+            isCartOpen:false,
             selectedGoods:[],
             switches:[
                 { value:'new', name:'Новинки'},
@@ -28,6 +28,14 @@ export default{
                 {value:'sortLowToUpwPrice',name:"Сначала недорогие"},
                 {value:'sortPopulare',name:"Сначала популярные"},
                 {value:'sortNewest',name:"Сначала новые"},
+            ],
+            menu:[
+                {link:"#",name:'Продукты'},
+                {link:"#",name:'Цвета'},
+                {link:"#",name:'Вдохновение'},
+                {link:"#",name:'Советы'},
+                {link:"#",name:'Найти магазин'},
+
             ]
             
         }
@@ -37,7 +45,7 @@ export default{
           return fetch('https://630c34e283986f74a7bb3fec.mockapi.io/goods').then(resp=>resp.json()) 
         },
         tooggleCart(){
-            this.cartIsClosed=!this.cartIsClosed
+            this.isCartOpen=!this.isCartOpen
         },
         addGoodInCart(event){
             let isGoodInCart = this.selectedGoods.find(good=>good.id==event.id)
@@ -132,30 +140,30 @@ export default{
     <header class="d-flex">    
         <div class="logo">Colors</div>
         <div class="menu">
-            <ul>
-                <li>Продукты</li>
-                <li>Цвета</li>
-                <li>Вдохновение</li>
-                <li>Советы</li>
-                <li>Найти магазин</li>
+            <ul class="d-flex menu__nav">
+                <li class="menu__item" v-for="item in menu">
+                    <a class="menu__link" :href="item.link">{{item.name}}</a>
+                </li>
             </ul>
         </div>
         <div class="phone">
         +7(495)221-77-69
         </div>
-        <div class="panel" @click="tooggleCart">
-            cart
+        <div class="panel">
+            <button>profile</button>
+            <button @click="tooggleCart">cart</button>
+
         </div>
     </header>
     <div class="slider">
         <img src="../public/img/slide_1.png" alt="">
     </div>
-    <div class="d-flex">
+    <div class="d-flex container">
         <div class="filter" >  
             <Switch v-for='item in switches' :switches="item" v-model="filters" ></Switch>   
         </div>
         <main class="content">
-            <div class="d-flex">
+            <div class="d-flex sort-bar">
                 <div class="quatity">
                     {{applyFilters.length}} товаров
                 </div>
@@ -171,7 +179,7 @@ export default{
     <footer class="footer">
     
     </footer>
-    <div class="modal" v-bind:class="{ d_none: cartIsClosed}">
+    <div class="modal"  v-if="isCartOpen">
         <div class="cart">
             <div class="d-flex">
                 <div class="">Корзина</div>

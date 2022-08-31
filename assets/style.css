@@ -5,7 +5,7 @@ html,body{
 }
 .d-flex{
     display: flex;
-   flex-wrap: wrap;
+    flex-wrap: wrap;
 }
 .d_none{
     display: none;
@@ -42,4 +42,29 @@ header{
 }
 .goodInCart img{
     width: 60px;
+}
+.menu__item{
+    list-style: none;
+}
+.menu__nav{
+    margin: auto!important;
+}
+.menu__link{
+    padding: 5px;
+}
+.filter{
+   min-width: 200px;
+}
+.container{
+    flex-wrap: nowrap;
+}
+.sort-bar{
+    justify-content: space-between;
+}
+.contant{
+    width: 100%;
+}
+.footer{
+    height: 200px;
+    background-color: black;
 }
