@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vuex@4.0.2"></script>
+    <script src="https://unpkg.com/vue-router@4"></script>
+    <script src="https://kit.fontawesome.com/75e42854e2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+</body>
+<script type="module">
+    const {createApp}=Vue
+    import App from "../App.js"
+    // import router from "../router/router.js"
+    // import store from "../store/store.js"
+    const app=createApp(App)
+
+    // app.use(router)
+    // app.use(store)
+    app.mount("#app")
+</script>
+</html>
