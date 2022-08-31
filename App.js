@@ -138,24 +138,30 @@ export default{
     },
     template:/*html*/`
     <header class="d-flex">    
-        <div class="logo">Colors</div>
-        <div class="menu">
-            <ul class="d-flex menu__nav">
-                <li class="menu__item" v-for="item in menu">
-                    <a class="menu__link" :href="item.link">{{item.name}}</a>
-                </li>
-            </ul>
+        <div class="right d-flex">
+            <div class="logo">Colors</div>
+            <div class="menu">
+                <ul class="d-flex menu__nav">
+                    <li class="menu__item" v-for="item in menu">
+                        <a class="menu__link" :href="item.link">{{item.name}}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="phone">
-        +7(495)221-77-69
-        </div>
-        <div class="panel">
-            <button>profile</button>
-            <button @click="tooggleCart" >
-                <span v-if="selectedGoods.length==0">cart</span>
-                <span v-else>{{selectedGoods.length}}</span>
-            </button>
-
+        <div class="left d-flex">
+            <div class="phone">
+                <div class="">+7(495)221-77-69</div>
+                <span>Заказать звонок</span>
+            </div>
+            <div class="panel">
+                <button>search</button>
+                <button>profile</button>
+                <button>like</button>
+                <button @click="tooggleCart" >
+                    <span v-if="selectedGoods.length==0">cart</span>
+                    <span v-else>{{selectedGoods.length}}</span>
+                </button>
+            </div>
         </div>
     </header>
     <div class="slider">

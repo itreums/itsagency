@@ -16,7 +16,8 @@ header{
     height: 104px;
     left: 0px;
     top: 0px;
-    
+    justify-content: space-between;
+    align-items: center;
     background: #ffffff;
 }
 .slider img{
