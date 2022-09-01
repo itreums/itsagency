@@ -20,6 +20,24 @@
 select:focus-visible{
     outline: none;
 }
-select:focus{
-    position: absolute;
+.sort{
+    z-index: 1000;
+    position: relative;
+}
+
+.sort input{
+    
+    border: none;
+    color: transparent;
+    text-shadow: 0 0 0 rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+
+}
+.sort input:focus {
+    outline: none;
+}
+.sort input:hover {
+    background-color: #7bb899;
+    
 }
