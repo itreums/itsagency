@@ -42,35 +42,36 @@ export default{
     },
     template:/*html */ `
     <div class="modal"  v-if="isCartOpen">
-    <div class="cart">
-    <div class="d-center cart__title">
-        <div class="">Корзина</div>
-        <button  @click="toggleCart"><i class="gg-math-plus r45"></i></button>
-    </div>
-    <div class="d-center cart-info">
-        <div class="quantityGoods">{{getQuatitityCart}} {{$filters.suffix(getQuatitityCart)}}</div>
-        <div @click="clearCart">Очистить список</div>
-    </div>
-    <div class="listOfGoodsInCart" >
-        <div class="goodInCart d-flex" v-for="good in selectedGoods" :key="good.id">
-            <img :src="good.image" alt="">
-            <div class="name">{{good.name}}</div>
-            <button @click="decreaseQuantity(good)"><i class="gg-math-minus"></i></button>
-            <div class="quantity">{{good.quantity}}</div>
-            <button @click="increaseQuantity(good)"><i class="gg-math-plus"></i></button>
-            <button @click="removeFromCart(good)"><i class="gg-math-plus r45"></i></button>
+        <div class="cart">
+            <div class="d-center cart__title">
+                <div class="">Корзина</div>
+                <button  @click="toggleCart"><i class="gg-math-plus r45"></i></button>
+            </div>
+            <div class="d-center cart-info">
+                <div class="quantityGoods">{{getQuatitityCart}} {{$filters.suffix(getQuatitityCart)}}</div>
+                <div class="clearCart" @click="clearCart">Очистить список</div>
+            </div>
+            <div class="listOfGoodsInCart" >
+                <div class="goodInCart d-flex" v-for="good in selectedGoods" :key="good.id">
+                    <img :src="good.image" alt="">
+                    <div class="name">{{good.name}}</div>
+                    <button @click="decreaseQuantity(good)"><i class="gg-math-minus"></i></button>
+                    <div class="quantity">{{good.quantity}}</div>
+                    <button @click="increaseQuantity(good)"><i class="gg-math-plus"></i></button>
+                    <button @click="removeFromCart(good)"><i class="gg-math-plus r45"></i></button>
+                </div>
+            </div>
+            <div class="total d-center">
+                <div class="totalPrice">
+                    <span class="totalPrice-sub">Итого</span>
+                    <div>{{getTotalPrice}}</div>
+                    
+                    
+                </div>
+                <button class="aaa">оформить заказ</button>
+                
+            </div>
         </div>
-    </div>
-    <div class="total d-center">
-        <div class="totalPrice">
-            <span>Итого</span>
-            {{getTotalPrice}}
-            
-        </div>
-        <button>оформить заказ</button>
-        
-    </div>
-</div>
     </div>   
     `
 

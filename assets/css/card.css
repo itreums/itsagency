@@ -1,0 +1,33 @@
+.card{
+    margin: 5px;
+    padding: 10px;
+    border-bottom: 1px solid gray;
+}
+.card__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 30px;
+    border: none;
+    background:#7BB899;;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.price{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+ 
+}
+
+.price-bar{
+    margin-top: 15px;
+    align-items: center;
+    justify-content: space-between;
+}
+.card .name{
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 112%;
+    color: #1F2020;
+}

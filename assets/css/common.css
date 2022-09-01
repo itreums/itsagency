@@ -1,0 +1,15 @@
+.r45{
+    transform: rotate(45deg);
+}
+.d-center{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+.d-flex{
+    display: flex;
+    flex-wrap: wrap;
+}
+.d_none{
+    display: none;
+}

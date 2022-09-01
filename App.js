@@ -2,9 +2,14 @@ import Card from './ui/Card.js'
 import Switch from './ui/Switch.js'
 import Select from './ui/Select.js'
 import Cart from './ui/Cart.js'
+import Header from './components/Header.js'
+import Slider from './components/Slider.js'
+
 export default{
     name:'App',
     components:{
+        Header,
+        Slider,
         Card,
         Switch,
         Select,
@@ -31,14 +36,7 @@ export default{
                 {value:'sortPopulare',name:"Сначала популярные"},
                 {value:'sortNewest',name:"Сначала новые"},
             ],
-            menu:[
-                {link:"#",name:'Продукты'},
-                {link:"#",name:'Цвета'},
-                {link:"#",name:'Вдохновение'},
-                {link:"#",name:'Советы'},
-                {link:"#",name:'Найти магазин'},
-
-            ]
+            
             
         }
     },
@@ -120,36 +118,10 @@ export default{
 
     },
     template:/*html*/`
-    <header class="d-flex">    
-        <div class="right d-flex">
-            <div class="logo">Colors</div>
-            <div class="menu">
-                <ul class="d-flex menu__nav">
-                    <li class="menu__item" v-for="item in menu">
-                        <a class="menu__link" :href="item.link">{{item.name.toUpperCase()}}</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="left d-flex">
-            <div class="phone">
-                <div class="">+7(495)221-77-69</div>
-                <span>Заказать звонок</span>
-            </div>
-            <div class="panel">
-                <button class="panel__btn"><i class="gg-search"></i></button>
-                <button class="panel__btn"><i class="gg-user"></i></button>
-                <button class="panel__btn"><i class="gg-heart"></i></button>
-                <button class="panel__btn" :class="{panel__btn_cart:selectedGoods.length}" @click="toggleCart" >
-                    <span v-if="selectedGoods.length==0"><i class="gg-shopping-bag"></i></span>
-                    <span v-else>{{getQuatitityCart}}</span>
-                </button>
-            </div>
-        </div>
-    </header>
-    <div class="slider-banner">
-        <img src="../public/img/slide_1.png" alt="">
-    </div>
+    <Header :getQuatitityCart="getQuatitityCart" @toggleCart="toggleCart"></Header>
+    
+    <Slider></Slider>
+
     <div class="d-flex container">
         <div class="filter" >  
             <Switch v-for='item in switches' :switches="item" v-model="filters" ></Switch>   
@@ -168,9 +140,9 @@ export default{
             </div>
         </main>
     </div>
-    <footer class="footer">
+
+    <footer class="footer"></footer>
     
-    </footer>
     <Cart :isCartOpen="isCartOpen" @toggleCart="toggleCart" :selectedGoods="selectedGoods" :getQuatitityCart="getQuatitityCart"></Cart>             
     `
 }
