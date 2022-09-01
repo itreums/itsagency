@@ -38,7 +38,7 @@ export default{
                         >
                         <div class="state"></div>
                         <label for=""  @click="toggleCheckbox">
-                        {{switches.name}}
+                        {{switches.name.toUpperCase()}}
                         </label>
                     </div>
             

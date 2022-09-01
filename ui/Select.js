@@ -20,7 +20,7 @@ export default{
     },
     template:/*html*/`
         <select name="" id="" @change="changeSort">
-            <option v-for="item in selects" :key="item.value" :value="item.value">{{item.name}}</option>         
+            <option v-for="item in selects" :key="item.value" :value="item.value">{{item.name.toUpperCase()}}</option>         
         </select>
     `   
 }

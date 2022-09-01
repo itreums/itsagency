@@ -8,6 +8,7 @@
     <script src="https://unpkg.com/vuex@4.0.2"></script>
     <script src="https://unpkg.com/vue-router@4"></script>
     <script src="https://kit.fontawesome.com/75e42854e2.js" crossorigin="anonymous"></script>
+    <link href='https://css.gg/css' rel='stylesheet'>
     <link rel="stylesheet" href="./assets/style.css">
     <title>Document</title>
 </head>
@@ -21,8 +22,15 @@
     import App from "../App.js"
     // import router from "../router/router.js"
     // import store from "../store/store.js"
+    
     const app=createApp(App)
-
+    app.config.globalProperties.$filters={
+        suffix (value) {        
+            if(value==1) {return 'Товар'}
+            else if(value==2||value==3||value==4) {return 'Товара'}
+            else {return 'Товаров'}
+        }
+    }
     // app.use(router)
     // app.use(store)
     app.mount("#app")
