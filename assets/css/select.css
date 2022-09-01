@@ -1,6 +1,25 @@
 .select option{
-    font-weight: 500;
+    
     font-size: 12px;
-    line-height: 15px;
+    
+    
+}.select option:hover{  
+    background: #7bb899;   
+}
+.select{
+    appearance: none;
+    font-size: 12px;
+    border: none;
+    background: white;
+    padding: 10px;
+    font-weight: 500;
     color: #1F2020;
+    line-height: 15px;
+    text-align: right;
+}
+select:focus-visible{
+    outline: none;
+}
+select:focus{
+    position: absolute;
 }

@@ -18,7 +18,7 @@ export default{
         <!--<div class="slider-banner">
             
         </div>-->
-    <div class="slider" data-slider="itc-slider" data-sipe="false">
+    <div class="slider" data-slider="itc-slider" data-swipe="false" data-loop="false">
         <div class="slider__wrapper">
             <div class="slider__items">
                 <div class="slider__item" v-for="item in banners">

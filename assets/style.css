@@ -9,7 +9,7 @@
 @import './css/card.css';
 @import './css/cart.css';
 
-html,body{
+html,body, *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -25,6 +25,7 @@ html,body{
 .content{
     width: 100%;
 }
+
 .quatity{
     font-weight: 500;
     font-size: 12px;

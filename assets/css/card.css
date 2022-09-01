@@ -1,5 +1,6 @@
 .card{
-    margin: 5px;
+    flex: 0 0 auto;
+    width: 20%;
     padding: 10px;
     border-bottom: 1px solid gray;
 }
@@ -9,7 +10,7 @@
     align-items: center;
     padding: 15px 30px;
     border: none;
-    background:#7BB899;;
+    background:#449f4f;
     border-radius: 5px;
     cursor: pointer;
 }
@@ -30,4 +31,37 @@
     font-size: 16px;
     line-height: 112%;
     color: #1F2020;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1399.98px) { 
+    .card{
+        width: 20%;
+    }
+}
+@media (max-width: 1199.98px) { 
+    .card{
+        width: 25%;
+    }
+}
+@media (max-width: 991.98px) { 
+    .card{
+        width: 33.333%;
+    }
+}
+@media (max-width: 767.98px) { 
+    .card{
+        width: 50%;
+    }
+}
+@media (max-width: 575.98px) { 
+    .card{
+        width: 50%;
+    }
 }

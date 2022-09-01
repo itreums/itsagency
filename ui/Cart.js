@@ -64,7 +64,7 @@ export default{
             <div class="total d-center">
                 <div class="totalPrice">
                     <span class="totalPrice-sub">Итого</span>
-                    <div>{{getTotalPrice}}</div>
+                    <div>{{getTotalPrice}} &#8381;</div>
                     
                     
                 </div>
