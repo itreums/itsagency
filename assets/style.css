@@ -15,6 +15,11 @@ html,body, *{
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
 }
+#app{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 .container{
     flex-wrap: nowrap;
 }
@@ -24,6 +29,7 @@ html,body, *{
 }
 .content{
     width: 100%;
+    margin-bottom: 40px;
 }
 
 .quatity{
@@ -35,6 +41,7 @@ html,body, *{
     justify-content: space-between;
 }
 .footer{
+    margin-top: auto;
     height: 200px;
     background-color: black;
 }
@@ -47,4 +54,7 @@ html,body, *{
     left: 0;
     z-index: 999;
 }
+
+
+
 

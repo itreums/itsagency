@@ -28,7 +28,24 @@ header{
     background: #449f4f;
     border-radius: 20px;
 }
+
+.panel__btn_cart:hover{
+    background:#57be63;
+}
+.card__btn:focus{
+    /* background:#9348b1; */
+}
+.panel__btn_cart:active{
+    background:#2a6431;
+}
+
+.phone{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
 .phone-number{
+    
     font-size: 16px;
     font-weight: 500;
     color: #1F2020;

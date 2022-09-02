@@ -1,8 +1,11 @@
 .card{
+ 
     flex: 0 0 auto;
-    width: 20%;
+    width: 16.666%;
     padding: 10px;
-    border-bottom: 1px solid gray;
+    
+    display: flex;
+    flex-direction: column;
 }
 .card__btn{
     display: flex;
@@ -14,6 +17,15 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.card__btn:hover{
+    background:#57be63;
+}
+.card__btn:focus{
+    /* background:#9348b1; */
+}
+.card__btn:active{
+    background:#2a6431;
+}
 .price{
     font-weight: 600;
     font-size: 16px;
@@ -22,19 +34,39 @@
 }
 
 .price-bar{
-    margin-top: 15px;
+    margin-top: auto;
+    padding-bottom: 15px;
     align-items: center;
     justify-content: space-between;
+
+    border-bottom: 1px solid gray;
 }
 .card .name{
     font-weight: 300;
     font-size: 16px;
     line-height: 112%;
     color: #1F2020;
+    margin-bottom: 15px;
 }
 
 
+.card-list-move,/* apply transition to moving elements */
+.card-list-enter-active,
+.card-list-leave-active {
+  transition: all 0.5s ease;
+}
 
+.card-list-enter-from,
+.card-list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.card-list-leave-active {
+  position: absolute;
+}
 
 
 

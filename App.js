@@ -131,18 +131,20 @@ export default{
                 <div class="quatity">
                     {{applyFilters.length}} {{$filters.suffix(applyFilters.length)}}
                 </div>
-                <div class="sort">
+                <div class="sorting">
                     <Select :selects="selects" v-model="selected"></Select>
                 </div>
             </div>
             <div class="goods d-flex" v-if="data">
-                <Card v-for='good in applyFilters' :key="good.id" :good="good" @addToCart="addGoodInCart($event)"></Card>
+                <TransitionGroup name="card-list">
+                    <Card v-for='good in applyFilters' :key="good.id" :good="good" @addToCart="addGoodInCart($event)"></Card>
+                </TransitionGroup>
             </div>
         </main>
     </div>
 
     <footer class="footer"></footer>
-    
+
     <Cart :isCartOpen="isCartOpen" @toggleCart="toggleCart" :selectedGoods="selectedGoods" :getQuatitityCart="getQuatitityCart"></Cart>             
     `
 }
