@@ -42,7 +42,7 @@ export default{
         </div>  
         <div class="right d-flex">
             <div class="logo">
-                <img src="../public/COLORS.svg" alt="">
+                <img src="./public/COLORS.svg" alt="">
                 <div class="dot"></div>
             </div>
             

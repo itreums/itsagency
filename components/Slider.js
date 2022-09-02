@@ -3,11 +3,11 @@ export default{
     data(){
         return{
             banners:[
-                {link:"../public/img/slide_1.png",name:"slide_1"},
-                {link:"../public/img/slide_2.jpeg",name:"slide_2"},
-                {link:"../public/img/slide_3.jpeg",name:"slide_3"},
-                {link:"../public/img/slide_4.jpeg",name:"slide_4"},
-                {link:"../public/img/slide_5.jpg",name:"slide_5"},
+                {link:"./public/img/slide_1.png",name:"slide_1"},
+                {link:"./public/img/slide_2.jpeg",name:"slide_2"},
+                {link:"./public/img/slide_3.jpeg",name:"slide_3"},
+                {link:"./public/img/slide_4.jpeg",name:"slide_4"},
+                {link:"./public/img/slide_5.jpg",name:"slide_5"},
             ]
         }
     },
