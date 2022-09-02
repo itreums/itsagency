@@ -28,10 +28,16 @@ export default{
             </div>
         </div>
         <!-- Кнопки для перехода к предыдущему и следующему слайду -->
-        <button class="slider__control" data-slide="prev"></button>
-        <button class="slider__control" data-slide="next"></button>
+        <div class="d-flex slider__control_outer">
+            <div class="slider__control_inner">
+                <button class="slider__control" data-slide="prev"></button>
+                <button class="slider__control" data-slide="next"></button>
+            </div>
+        </div>
         <ol class="slider__indicators">
+           
             <li :data-slide-to="index" v-for="(item,index) in banners"></li>
+           
             
         </ol>
     </div>

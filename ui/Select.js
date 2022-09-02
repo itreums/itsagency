@@ -2,35 +2,52 @@ export default{
     name:"Select",
     data(){
         return {
-            showSort:false
+            showSort:false,
+            selects:[
+                {value:'sortUpToLowPrice',name:"Сначала дорогие"},
+                {value:'sortLowToUpwPrice',name:"Сначала недорогие"},
+                {value:'sortPopulare',name:"Сначала популярные"},
+                {value:'sortNewest',name:"Сначала новые"},
+            ],
+            
         }
     },
     props:{
-        selects:Object,
         modelValue:String
     },
     methods:{
         changeSort(event){
             console.log(event.target.value)
-            this.$emit('update:modelValue',event.target.value)
+            for(let item of this.selects){
+                if(item.name==event.target.value){
+                    this.$emit('update:modelValue',item.value)
+                }
+            }
+            
         },
         openSort(){
             this.showSort=!this.showSort
         }
     },
     computed:{
-     
+        activeSelect(){
+            for(let item of this.selects){
+                if(item.value==this.modelValue){
+                    return item.name
+                }
+            }
+        }
     },
     template:/*html*/`
         <!--<select name="" id="" @change="changeSort" class="select">
             <option v-for="item in selects" :key="item.value" :value="item.value">{{item.name.toUpperCase()}}</option>         
         </select>-->
 
-        <div class="sort_active" @click="openSort">{{modelValue}}</div>
+        <div class="sort_active" @click="openSort">{{activeSelect}}</div>
         
         <div class="sort" v-show="showSort">
             <div class="" v-for="item in selects" >
-                <input readonly type="text" :key="item.value" :value="item.value"  @click="openSort(); changeSort($event);">
+                <input readonly type="text" :key="item.value" :value="item.name"  @click="openSort(); changeSort($event);">
             </div>
         </div>
         <div class="modal" v-show="showSort"></div>

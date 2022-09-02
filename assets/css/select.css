@@ -38,6 +38,7 @@ select:focus-visible{
     position: relative;
 }
 .sort input{
+    user-select: none;
     padding-left: 24px;
     border: none;
     color: transparent;

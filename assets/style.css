@@ -41,6 +41,10 @@ html,body, *{
     padding: 2px 12px 12px 12px;
     justify-content: space-between;
 }
+.goods{
+    position: relative;
+}
+
 .footer{
     margin-top: auto;
     height: 200px;

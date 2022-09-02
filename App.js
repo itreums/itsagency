@@ -30,12 +30,7 @@ export default{
                 { value:'exclusice', name:'Эксклюзивные'},
                 { value:'sale', name:'Распродажа'},
             ],
-            selects:[
-                {value:'sortUpToLowPrice',name:"Сначала дорогие"},
-                {value:'sortLowToUpwPrice',name:"Сначала недорогие"},
-                {value:'sortPopulare',name:"Сначала популярные"},
-                {value:'sortNewest',name:"Сначала новые"},
-            ],
+            
             
             
         }
@@ -135,7 +130,7 @@ export default{
                     {{applyFilters.length}} {{$filters.suffix(applyFilters.length)}}
                 </div>
                 <div class="sorting">
-                    <Select :selects="selects" v-model="selected"></Select>
+                    <Select v-model="selected"></Select>
                 </div>
             </div>
             <div class="goods d-flex" v-if="data">
