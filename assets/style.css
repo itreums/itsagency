@@ -207,4 +207,11 @@ html,body, *{
         flex-direction: column;
         margin-right: 0;
       }
+    .quantity {
+        width: auto;
+    }
+    .cart__wrap-img {
+        width: 80px;
+        height: 80px;
+    }
 }
