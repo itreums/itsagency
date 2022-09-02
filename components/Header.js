@@ -9,7 +9,8 @@ export default{
                 {link:"#",name:'Советы'},
                 {link:"#",name:'Найти магазин'},
 
-            ]
+            ],
+            mobMenu:true
         }
     },
     props:{
@@ -21,12 +22,23 @@ export default{
         },
         openMobMenu(){
             console.log("mobmenu")
+            this.mobMenu=!this.mobMenu
         }
     },
     template: /*html*/ `
-    <header class="d-flex">  
+    <header class="d-flex">
+        <div class="modal" :class="{d_none:mobMenu}">
+            <div class="mobile-menu">
+                <button class="delete-btn delete-btn__filt"  @click="openMobMenu"><i class="gg-math-plus r45"></i></button>
+                <ul class="d-flex menu__nav menu__nav_mob">
+                    <li class="menu__item" v-for="item in menu">
+                        <a class="menu__link" :href="item.link">{{item.name.toUpperCase()}}</a>
+                    </li>
+                </ul>
+            </div>
+        </div> 
         <div class="mobile-menu-btn d_none">
-            <button class="panel__btn" @click="openMobMenu"><i class="gg-menu"></i></button>
+            <button class="panel__btn" @click="openMobMenu" ><i class="gg-menu"></i></button>
         </div>  
         <div class="right d-flex">
             <div class="logo">

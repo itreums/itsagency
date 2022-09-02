@@ -93,6 +93,17 @@ header{
     margin-right: 24px;
 }
 
+.mobile-menu{
+    background: white;
+    height: 100%;
+    padding: 24px;
+}
+.menu__nav_mob{
+    display: block;
+}
+.menu__nav_mob li{
+    padding: 15px 0;
+}
 
 @media (max-width: 1399.98px) { 
     .right{

@@ -30,6 +30,7 @@ export default{
                 { value:'exclusice', name:'Эксклюзивные'},
                 { value:'sale', name:'Распродажа'},
             ],
+            mobFilter:false
             
             
             
@@ -65,7 +66,7 @@ export default{
             this.selectedGoods=[]
         },
         openMobFilter(){
-            console.log("filters")
+            this.mobFilter=!this.mobFilter
         }
 
     },
@@ -130,14 +131,16 @@ export default{
         </div>
     </div>
 
-    <div class="title-p">
+    <div class="title-p d_none">
         Краски
     </div>
     <Slider></Slider>
 
     <div class="d-flex container">
-        <div class="fliter__outer">
+        <div class="filter__outer" :class="{d_m_vis:mobFilter}">
             <div class="filter__inner">
+                <div class="filter-tab d_none"></div>
+                <button class="delete-btn delete-btn__filt d_none" @click="openMobFilter"><i class="gg-math-plus r45"></i></button>
                 <div class="filter" >
                     <Switch v-for='item in switches' :switches="item" v-model="filters" ></Switch>
                 </div>
