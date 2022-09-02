@@ -45,7 +45,9 @@
     
 }
 
-  
+.card:hover .add-btn{
+    visibility: visible;
+}
 
   
 

@@ -13,3 +13,6 @@
 .d_none{
     display: none;
 }
+.visible{
+    visibility: hidden;
+}

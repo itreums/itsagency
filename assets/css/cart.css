@@ -152,3 +152,24 @@
 .buy-btn:hover{
     background: #8ccfad;
 }
+
+
+
+.cart {
+    scrollbar-width: thin;
+    scrollbar-color: #b1abab #d7d7d7;
+  }
+  
+  /* для Chrome/Edge/Safari */
+  .cart ::-webkit-scrollbar {
+    height: 12px;
+    width: 12px;
+  }
+  .cart ::-webkit-scrollbar-track {
+    background: #d7d7d7;
+  }
+  .cart ::-webkit-scrollbar-thumb {
+    background-color: #b1abab;
+    border-radius: 5px;
+    border: 2px solid #d7d7d7;
+  }

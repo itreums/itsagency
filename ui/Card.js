@@ -23,7 +23,7 @@ export default{
                 
                 
             </div>
-            <div class="add-btn">
+            <div class="add-btn visible">
                 <button class="card__btn" @click="addToCart(good)"><i class="gg-math-plus"></i></button>
             </div>
         </div>

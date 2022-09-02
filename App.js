@@ -63,6 +63,9 @@ export default{
         },
         clearCart(){
             this.selectedGoods=[]
+        },
+        openMobFilter(){
+            console.log("filters")
         }
 
     },
@@ -117,17 +120,34 @@ export default{
     },
     template:/*html*/`
     <Header :getQuatitityCart="getQuatitityCart" @toggleCart="toggleCart"></Header>
-    
+    <div class="breadcrumbs">
+        <div class="breadcrumbs_inner">
+            <ul>
+                <li class="br-main"><a href="#">главная</a></li>
+                <li><a href="#">продукты</a></li>
+                <li><a href="#">краски</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="title-p">
+        Краски
+    </div>
     <Slider></Slider>
 
     <div class="d-flex container">
-        <div class="filter" >  
-            <Switch v-for='item in switches' :switches="item" v-model="filters" ></Switch>   
+        <div class="fliter__outer">
+            <div class="filter__inner">
+                <div class="filter" >
+                    <Switch v-for='item in switches' :switches="item" v-model="filters" ></Switch>
+                </div>
+            </div>
         </div>
         <main class="content">
             <div class="d-flex sort-bar">
                 <div class="quatity">
-                    {{applyFilters.length}} {{$filters.suffix(applyFilters.length)}}
+                    <div class="m_none">{{applyFilters.length}} {{$filters.suffix(applyFilters.length)}}</div>
+                    <div class="filters-btn d_none" @click="openMobFilter">Фильтры</div>
                 </div>
                 <div class="sorting">
                     <Select v-model="selected"></Select>
