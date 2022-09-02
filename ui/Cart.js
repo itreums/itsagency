@@ -10,7 +10,7 @@ export default{
             this.$emit('toggleCart')
         },
         clearCart(){
-            console.log("clear cart")
+            this.$emit('clearCart')
         },
         removeFromCart(event){
             let index=this.selectedGoods.indexOf(event)
@@ -45,7 +45,7 @@ export default{
         <div class="cart">
             <div class="d-center cart__title">
                 <div class="">Корзина</div>
-                <button  @click="toggleCart"><i class="gg-math-plus r45"></i></button>
+                <button class="close-btn" @click="toggleCart"><i class="gg-math-plus r45"></i></button>
             </div>
             <div class="d-center cart-info">
                 <div class="quantityGoods">{{getQuatitityCart}} {{$filters.suffix(getQuatitityCart)}}</div>
@@ -53,22 +53,32 @@ export default{
             </div>
             <div class="listOfGoodsInCart" >
                 <div class="goodInCart d-flex" v-for="good in selectedGoods" :key="good.id">
-                    <img :src="good.image" alt="">
-                    <div class="name">{{good.name}}</div>
-                    <button @click="decreaseQuantity(good)"><i class="gg-math-minus"></i></button>
-                    <div class="quantity">{{good.quantity}}</div>
-                    <button @click="increaseQuantity(good)"><i class="gg-math-plus"></i></button>
-                    <button @click="removeFromCart(good)"><i class="gg-math-plus r45"></i></button>
+                    <div class="cart__wrap-img">
+                        <img :src="good.image" alt="">
+                    </div>
+                    <div class="good-info__wrap">
+                        <div class="name">{{good.name}}</div>
+                        <div class="good-info__price">{{good.quantity*good.price}} &#8381;</div>
+                    </div>
+
+                    <div class="cart__btn-group">
+                        <div class="cart__btn-group-count">
+                            <button class="count-btn" @click="decreaseQuantity(good)"><i class="gg-math-minus"></i></button>
+                            <div class="quantity">{{good.quantity}}</div>
+                            <button class="count-btn" @click="increaseQuantity(good)"><i class="gg-math-plus"></i></button>
+                        </div>
+                        <button class="delete-btn" @click="removeFromCart(good)"><i class="gg-math-plus r45"></i></button>
+                    </div>
                 </div>
             </div>
             <div class="total d-center">
                 <div class="totalPrice">
                     <span class="totalPrice-sub">Итого</span>
-                    <div>{{getTotalPrice}} &#8381;</div>
+                    <div>{{getTotalPrice}}&#8381;</div>
                     
                     
                 </div>
-                <button class="aaa">оформить заказ</button>
+                <button class="buy-btn">оформить заказ</button>
                 
             </div>
         </div>

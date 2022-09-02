@@ -26,11 +26,11 @@ export default{
             <option v-for="item in selects" :key="item.value" :value="item.value">{{item.name.toUpperCase()}}</option>         
         </select>-->
 
-        <div class="" @click="openSort">{{modelValue}}</div>
+        <div class="sort_active" @click="openSort">{{modelValue}}</div>
         
         <div class="sort" v-show="showSort">
             <div class="" v-for="item in selects" >
-                <input readonly type="text" :key="item.value" :value="item.value" @click="changeSort" @click="openSort">
+                <input readonly type="text" :key="item.value" :value="item.value"  @click="openSort(); changeSort($event);">
             </div>
         </div>
         <div class="modal" v-show="showSort"></div>

@@ -11,8 +11,8 @@
     left: 0;
     top: 0;
     min-width: 1em;
-    width: 100%;
-    height: 100%;
+    width: 36px;
+    height: 22px;
     z-index: 2;
     opacity: 0;
     margin: 0;
@@ -21,15 +21,13 @@
 }
 .switch .state::before {
     content: '';
-    border: 1px solid #bdc3c7;
     background-color: #d4d4d4;
-    border-radius: 60px;
-    width: 2em;
+    border-radius: 40px;
+    width: 36px;
     box-sizing: unset;
-    height: calc(1em + 2px);
+    height: 22px;
     position: absolute;
-    top: 0;
-    top: calc((0% - (100% - 1em)) - 16%);
+   
     z-index: 0;
     transition: all .5s ease;
 }
@@ -39,26 +37,18 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 100%;
-    /* identical to box height, or 12px */
-    
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    
-    /* Black / Text */
-    
     color: #1F2020;
-
-    position: initial;
     display: inline-block;
-   
     margin: 0;
-    text-indent: 3.5em;
-    min-width: calc(1em + 2px);
+    text-indent: 48px;
+ 
 }
 .switch label::before,.switch label::after{
     content: '';
-    width: calc(1em + 2px);
-    height: calc(1em + 2px);
+    width: 7px;
+    height: 7px;
     display: block;
     box-sizing: border-box;
     border-radius: 0;
@@ -66,25 +56,20 @@
     z-index: 0;
     position: absolute;
     left: 0;
-    top: calc((0% - (100% - 1em)) - 8%);
+    top: 7px;
     background-color: transparent;
-
-
-
     transition: all .5s ease;
     border-radius: 100%;
-    left: 0;
+    left: 4px;
     border-color: transparent;
-    -webkit-transform: scale(.5);
-    -ms-transform: scale(.5);
-    transform: scale(.5);
+
 }
 .switch label::after{
     background-color: #000000!important;
 }
 .switch input:checked~ label::after {
     background-color: #000000!important;
-    left: 1em;
+    left: 25px;
 }
 .switch input:checked~.state:before {
     border-color: #5a656b;

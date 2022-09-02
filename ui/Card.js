@@ -10,7 +10,11 @@ export default{
     },
     template:/*html*/`
     <div class="card">
-        <img src="../public/img/paint_1.png" alt="">
+        
+        <div class="card__wrap-img">
+            <!--<img :src="good.image" alt="">-->
+            <img src="../public/img/paint_1.png" alt="">
+        </div>
         <div class="name">{{good.name}}, {{good.vendor}}</div>
         <div class="d-flex price-bar">
             <div class="price">

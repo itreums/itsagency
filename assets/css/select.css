@@ -22,18 +22,38 @@ select:focus-visible{
 }
 .sort{
     z-index: 1000;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.sort_active{
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+.sorting{
     position: relative;
 }
-
 .sort input{
-    
+    padding-left: 24px;
     border: none;
     color: transparent;
     text-shadow: 0 0 0 rgb(0, 0, 0);
-    text-align: center;
     cursor: pointer;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1F2020;
+    width: 280px;
+    height: 48px;
 
 }
+
 .sort input:focus {
     outline: none;
 }

@@ -22,22 +22,23 @@ html,body, *{
 }
 .container{
     flex-wrap: nowrap;
+    padding: 72px 64px
 }
 .filter{
-    padding: 10px;
-    min-width: 200px;
+    min-width: 300px;
 }
 .content{
-    width: 100%;
-    margin-bottom: 40px;
+    width: 100%;  
 }
 
 .quatity{
+    text-transform: uppercase;
     font-weight: 500;
     font-size: 12px;
     line-height: 15px;
 }
 .sort-bar{
+    padding: 2px 12px 12px 12px;
     justify-content: space-between;
 }
 .footer{

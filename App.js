@@ -66,6 +66,9 @@ export default{
             console.log(event)
             this.filters.push(event)
         },
+        clearCart(){
+            this.selectedGoods=[]
+        }
 
     },
     async created(){
@@ -145,6 +148,6 @@ export default{
 
     <footer class="footer"></footer>
 
-    <Cart :isCartOpen="isCartOpen" @toggleCart="toggleCart" :selectedGoods="selectedGoods" :getQuatitityCart="getQuatitityCart"></Cart>             
+    <Cart :isCartOpen="isCartOpen" @toggleCart="toggleCart" :selectedGoods="selectedGoods" :getQuatitityCart="getQuatitityCart" @clearCart="clearCart"></Cart>             
     `
 }

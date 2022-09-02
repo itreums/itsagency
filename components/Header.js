@@ -23,7 +23,10 @@ export default{
     template: /*html*/ `
     <header class="d-flex">    
         <div class="right d-flex">
-            <div class="logo">Colors</div>
+            <div class="logo">
+                <img src="../public/COLORS.svg" alt="">
+                <div class="dot"></div>
+            </div>
             <div class="menu">
                 <ul class="d-flex menu__nav">
                     <li class="menu__item" v-for="item in menu">
