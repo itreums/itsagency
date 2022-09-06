@@ -1,11 +1,25 @@
 {
   "name": "itsagency",
   "version": "1.0.0",
-  "description": "",
+  "description": "shopvue",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itreums/itsagency.git"
+  },
+  "bugs": {
+    "url": "https://github.com/itreums/itsagency/issues"
+  },
+  "homepage": "https://github.com/itreums/itsagency#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.54.8"
+  }
 }

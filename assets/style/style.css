@@ -1,0 +1,16 @@
+.div {
+  width: 100%;
+}
+
+.main {
+  background-color: aliceblue;
+}
+.main h1 {
+  color: black;
+}
+.main .a {
+  color: aqua;
+}
+.main .b {
+  width: 100px;
+}
