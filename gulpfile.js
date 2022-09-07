@@ -12,7 +12,7 @@ function buildStyles() {
         .pipe(sass().on('error', sass.logError))
         .pipe(gcmq())     
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('assets/style/'));
+        .pipe(gulp.dest('assets/'));
 
 
 };
