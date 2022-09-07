@@ -37,9 +37,9 @@ export default{
         }
     },
     methods:{
-        getData(){
-          return fetch('https://630c34e283986f74a7bb3fec.mockapi.io/goods').then(resp=>resp.json()) 
-        },
+        // getData(){
+        //   return fetch('https://630c34e283986f74a7bb3fec.mockapi.io/goods').then(resp=>resp.json()) 
+        // },
         toggleCart(){
             this.isCartOpen=!this.isCartOpen
         },
@@ -71,8 +71,8 @@ export default{
 
     },
     async created(){
-        this.data=await  this.getData()
-        console.log(this.data)
+        await this.$store.dispatch('getData')
+        this.data=this.$store.state.products
     },
     computed:{
         sortGoods(){
