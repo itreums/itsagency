@@ -1,0 +1,42 @@
+.sorting{
+    position: relative;
+}
+.sort_active{
+    user-select: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+}
+
+.sort{
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    & input{
+        user-select: none;
+        padding-left: 24px;
+        border: none;
+        color: transparent;
+        text-shadow: 0 0 0 rgb(0, 0, 0);
+        cursor: pointer;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: #1F2020;
+        width: 280px;
+        height: 48px;
+
+        &:focus{
+            outline: none;
+        }
+        &:hover{
+            background-color: #7bb899;
+        }
+    }
+}

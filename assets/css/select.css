@@ -1,30 +1,5 @@
-.select option{
-    
-    font-size: 12px;
-    
-    
-}.select option:hover{  
-    background: #7bb899;   
-}
-.select{
-    appearance: none;
-    font-size: 12px;
-    border: none;
-    background: white;
-    padding: 10px;
-    font-weight: 500;
-    color: #1F2020;
-    line-height: 15px;
-    text-align: right;
-}
-select:focus-visible{
-    outline: none;
-}
-.sort{
-    z-index: 1000;
-    position: absolute;
-    top: 0;
-    right: 0;
+.sorting{
+    position: relative;
 }
 .sort_active{
     user-select: none;
@@ -34,8 +9,11 @@ select:focus-visible{
     font-size: 12px;
     line-height: 15px;
 }
-.sorting{
-    position: relative;
+.sort{
+    z-index: 1000;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 .sort input{
     user-select: none;
@@ -62,3 +40,28 @@ select:focus-visible{
     background-color: #7bb899;
     
 }
+
+
+.select{
+    appearance: none;
+    font-size: 12px;
+    border: none;
+    background: white;
+    padding: 10px;
+    font-weight: 500;
+    color: #1F2020;
+    line-height: 15px;
+    text-align: right;
+}
+.select option{ 
+    font-size: 12px;   
+}
+.select option:hover{  
+    background: #7bb899;   
+}
+
+select:focus-visible{
+    outline: none;
+}
+
+

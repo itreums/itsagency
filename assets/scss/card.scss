@@ -1,0 +1,118 @@
+.card{
+    flex: 0 0 auto;
+    width: 20%;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+
+    &__wrap-img{
+        width: 100%;
+        padding-top: 100%;
+        background-color: black;
+        position: relative;
+
+        & img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__product-name{
+        margin-top: 16px;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 112%;
+        color: #1F2020;
+        margin-bottom: 15px;
+    }
+    &__price-bar{
+        margin-top: auto;
+        padding-bottom: 14px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+        
+        &__price{
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 100%;
+        }
+        &__wrap-btn{
+
+        }
+    }
+    &__btn{
+        width: 80px;
+        height: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background:#449f4f;
+        border-radius: 8px;
+        cursor: pointer;
+
+        &:hover{
+            background:#57be63;
+        }
+        &:focus{
+            /* background:#9348b1; */
+        }
+        &:active{
+            background:#2a6431;
+        }
+    }
+    &:hover .price-bar__wrap-btn{
+         visibility: visible;
+    }
+}
+
+.card-list-move,/* apply transition to moving elements */
+.card-list-enter-active,
+.card-list-leave-active {
+  transition: all 0.5s ease;
+  
+}
+
+.card-list-enter-from,
+.card-list-leave-to {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* ensure leaving items are taken out of layout flow so that moving
+   animations can be calculated correctly. */
+.card-list-leave-active {
+  position: absolute;
+
+}
+
+@media (max-width: 1399.98px) { 
+    .card{
+        width: 25%;
+    }
+}
+@media (max-width: 1199.98px) { 
+    .card{
+        width: 33.333%;
+    }
+}
+@media (max-width: 991.98px) { 
+    .card{
+        width: 50%;
+    }
+}
+@media (max-width: 767.98px) { 
+    .card{
+        
+    }
+}
+@media (max-width: 575.98px) { 
+    .card{
+        
+    }
+}

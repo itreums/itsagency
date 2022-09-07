@@ -15,15 +15,15 @@ export default{
             <img :src="good.image" alt="">
             <!--<img src="../public/img/paint_1.png" alt="">-->
         </div>
-        <div class="name">{{good.name}}, {{good.vendor}}</div>
-        <div class="d-flex price-bar">
-            <div class="price">
+        <div class="card__product-name name">{{good.name}}, {{good.vendor}}</div>
+        <div class="d-flex  card__price-bar price-bar">
+            <div class="price-bar__price price">
                 
                 {{parseFloat(good.price)}} &#8381;
                 
                 
             </div>
-            <div class="add-btn visible">
+            <div class="price-bar__wrap-btn add-btn visible">
                 <button class="card__btn" @click="addToCart(good)"><i class="gg-math-plus"></i></button>
             </div>
         </div>

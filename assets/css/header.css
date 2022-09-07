@@ -8,13 +8,6 @@ header{
     align-items: center;
     background: #ffffff;
 }
-.menu{
-    padding-left: 170px;
-}
-
-.panel{
-    display: flex;
-}
 .logo{
     display: flex;
 }
@@ -25,6 +18,51 @@ header{
     background-color: #1F2020;
     border-radius: 7px;
 }
+.menu{
+    padding-left: 170px;
+}
+.menu__nav{
+    margin: auto!important;
+}
+.menu__item{
+    list-style: none;
+}
+.menu__link{
+    text-decoration: none;
+    color: #1F2020;
+    font-size: 14px;
+    font-weight: 400;
+    margin-right: 24px;
+}
+.phone{
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: 105px;
+}
+.phone-number{
+    
+    font-size: 16px;
+    font-weight: 500;
+    color: #1F2020;
+}
+.phone-action{
+    font-size: 14px;
+    font-weight: 400;
+    color: #1F2020;
+    opacity: 0.3;
+}
+
+
+.panel{
+    display: flex;
+}
+
+
+
+
+
 .panel__btn{
     margin: 10px;
     cursor: pointer;
@@ -55,43 +93,10 @@ header{
     background:#2a6431;
 }
 
-.phone{
-    margin-left: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-right: 105px;
-}
-.phone-number{
-    
-    font-size: 16px;
-    font-weight: 500;
-    color: #1F2020;
-}
-.phone-action{
-    font-size: 14px;
-    font-weight: 400;
-    color: #1F2020;
-    opacity: 0.3;
-}
 
 
-.menu__link{
-    text-decoration: none;
-    color: #1F2020;
-    font-size: 14px;
-    font-weight: 400;
-}
 
-.menu__item{
-    list-style: none;
-}
-.menu__nav{
-    margin: auto!important;
-}
-.menu__link{
-    margin-right: 24px;
-}
+
 
 .mobile-menu{
     background: white;

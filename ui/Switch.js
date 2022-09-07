@@ -25,23 +25,18 @@ export default{
             }
           }
     },
-    template:/*html*/`
-        
-            
-                
-                    <div class="switch">
-                        <input type="checkbox"
-                            v-model="filter"
-                            :value='switches.value'
-                            :key='switches.value'
-                            @change=""
-                        >
-                        <div class="state"></div>
-                        <label for=""  @click="toggleCheckbox">
-                        {{switches.name.toUpperCase()}}
-                        </label>
-                    </div>
-            
-        
+    template:/*html*/`           
+        <div class="switch">
+            <input type="checkbox"
+                v-model="filter"
+                :value='switches.value'
+                :key='switches.value'
+                @change=""
+            >
+            <div class="state"></div>
+            <label for=""  @click="toggleCheckbox">
+            {{switches.name.toUpperCase()}}
+            </label>
+        </div>     
     `   
 }

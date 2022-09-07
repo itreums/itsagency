@@ -26,7 +26,7 @@ export default{
         }
     },
     template: /*html*/ `
-    <header class="d-flex">
+    <header class="d-flex header">
         <div class="modal" :class="{d_none:mobMenu}">
             <div class="mobile-menu">
                 <button class="delete-btn delete-btn__filt"  @click="openMobMenu"><i class="gg-math-plus r45"></i></button>
@@ -55,12 +55,12 @@ export default{
             </ul>
         </div>
         <div class="phone">
-            <div class="phone-number">+7(495)221-77-69</div>
-            <span class="phone-action">Заказать звонок</span>
+            <div class="phone-number phone__number">+7(495)221-77-69</div>
+            <span class="phone-action phone__action">Заказать звонок</span>
         </div>
         <div class="left d-flex">
             
-            <div class="panel">
+            <div class="header__panel-btn panel">
                 <button class="panel__btn m_none"><i class="gg-search"></i></button>
                 <button class="panel__btn m_none"><i class="gg-user"></i></button>
                 <button class="panel__btn m_none"><i class="gg-heart"></i></button>
