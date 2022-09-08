@@ -1,6 +1,6 @@
 const {createApp}=Vue
 import App from "./App.js"
-// import router from "../router/router.js"
+import router from "./router/router.js"
 import store from "./store/store.js"
 
 const app=createApp(App)
@@ -11,6 +11,6 @@ app.config.globalProperties.$filters={
         else {return 'Товаров'}
     }
 }
-// app.use(router)
+app.use(router)
 app.use(store)
 app.mount("#app")

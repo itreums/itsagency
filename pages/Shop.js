@@ -1,18 +1,18 @@
-import Header from './components/Header.js'
-import Slider from './components/Slider.js'
-import Cart from './ui/Cart.js'
+import Card from "../ui/Card.js"
+import Switch from '../ui/Switch.js'
+import Select from '../ui/Select.js'
+import Cart from '../ui/Cart.js'
 
 export default{
-    name:'App',
+    name:'shop',
     components:{
-        Header,
-        Slider,
+        Card,
+        Switch,
+        Select,
         Cart
-      
     },
     data(){
         return {
-    
             filters:[],
             switches:[
                 { value:'new', name:'Новинки'},
@@ -22,19 +22,19 @@ export default{
                 { value:'sale', name:'Распродажа'},
             ],
             mobFilter:false
-                 
         }
+        
     },
     methods:{ 
-        addFilter(event){
-            console.log(event)
-            this.filters.push(event)
-        },
-  
-        openMobFilter(){
-            this.mobFilter=!this.mobFilter
-        }
-
+            addFilter(event){
+                console.log(event)
+                this.filters.push(event)
+            },
+      
+            openMobFilter(){
+                this.mobFilter=!this.mobFilter
+            }
+    
     },
     async created(){
         await this.$store.dispatch('getData')
@@ -67,37 +67,33 @@ export default{
                 }              
             }         
         },
-        
-           
     },
-    watch:{
-
-    },
-    template:/*html*/`
-        <Header></Header>
-        <div class="breadcrumbs">
-            <div class="breadcrumbs_inner">
-                <ul>
-                    <li class="br-main"><a href="#">главная</a></li>
-                    <li><a href="#">продукты</a></li>
-                    <li><router-link to="/">краски</router-link></li>
-                </ul>
+    template:/*html*/ `
+    <div class="filter__outer" :class="{d_m_vis:mobFilter}">
+        <div class="filter__inner">
+            <div class="filter-tab d_none"></div>
+            <button class="delete-btn delete-btn__filt d_none" @click="openMobFilter"><i class="gg-math-plus r45"></i></button>
+            <div class="filter" >
+                <Switch v-for='item in switches' :switches="item" v-model="filters" ></Switch>
             </div>
         </div>
-
-        <div class="title-p d_none">
-            Краски
+    </div>
+    <main class="content">
+        <div class="d-flex sort-bar">
+            <div class="quatity">
+                <div class="m_none">{{applyFilters.length}} {{$filters.suffix(applyFilters.length)}}</div>
+                <div class="filters-btn d_none" @click="openMobFilter">Фильтры</div>
+            </div>
+            <div class="sorting">
+                <Select v-model="sorting"></Select>
+            </div>
         </div>
-        <Slider></Slider>
-        
-        <div class="d-flex container">
-            <router-view></router-view>
-            
-
+        <div class="goods d-flex" v-if="$store.state.products">
+            <TransitionGroup name="card-list">
+                <Card v-for='good in applyFilters' :key="good.id" :good="good" @addToCart="addGoodInCart($event)"></Card>
+            </TransitionGroup>
         </div>
-        
-        <footer class="footer"></footer>
-
-        <Cart></Cart>             
+    </main>
+    
     `
 }

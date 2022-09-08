@@ -6,10 +6,14 @@ export default{
     methods:{
         addToCart(good){
             this.$store.commit('cart/addGoodInCart',good)
+        },
+        openProduct(good){
+            console.log(good)
+            this.$router.push({ name: 'product', params: { id:good.id}})
         }
     },
     template:/*html*/`
-    <div class="card">
+    <div class="card" @click="openProduct(good)">
         
         <div class="card__wrap-img">
             <img :src="good.image" alt="">
@@ -24,7 +28,7 @@ export default{
                 
             </div>
             <div class="price-bar__wrap-btn add-btn visible">
-                <button class="card__btn" @click="addToCart(good)"><i class="gg-math-plus"></i></button>
+                <button class="card__btn" @click.stop="addToCart(good)"><i class="gg-math-plus"></i></button>
             </div>
         </div>
     </div>
