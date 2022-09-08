@@ -16,16 +16,6 @@ const routes=[
         name:'product',
         
     },
-    // {
-    //     path:'/:id',
-    //     component:Product,
-    //     name:'product',
-    //     props: (route) => ({
-    //         id:route.params.id,
-    //         product: route.params.product,
-    //         ...route.params
-    //     })
-    // },
     {
         path:'/:pathMatch(.*)',
         component:Shop

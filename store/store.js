@@ -1,9 +1,10 @@
 import { cartModule } from "./modules/cart.js"
-
+import { filterModule } from "./modules/filter.js"
 const { createStore } = Vuex
 export default createStore({
     modules:{
-        cart:cartModule
+        cart:cartModule,
+        filter:filterModule
     },
     state(){
         return{

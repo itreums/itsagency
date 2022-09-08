@@ -7,7 +7,7 @@ export default{
     },
     props:{
         switches:Object,
-        modelValue:Array
+
     },
     methods:{
         toggleCheckbox(event){
@@ -16,14 +16,14 @@ export default{
     },
     computed:{
         filter: {
-            get() {
-                return this.modelValue
+            get(){
+                return this.$store.state.filter.filters
             },
-            set(value) {
-                console.log(value)
-                this.$emit('update:modelValue', value)
+            set(value){
+                this.$store.commit('filter/addFilter',value)
             }
-          }
+        },
+            
     },
     template:/*html*/`           
         <div class="switch">

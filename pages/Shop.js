@@ -13,28 +13,14 @@ export default{
     },
     data(){
         return {
-            filters:[],
-            switches:[
-                { value:'new', name:'Новинки'},
-                { value:'has', name:'Есть в наличии'},
-                { value:'contract', name:'Контрактные'},
-                { value:'exclusice', name:'Эксклюзивные'},
-                { value:'sale', name:'Распродажа'},
-            ],
             mobFilter:false
         }
         
     },
-    methods:{ 
-            addFilter(event){
-                console.log(event)
-                this.filters.push(event)
-            },
-      
-            openMobFilter(){
-                this.mobFilter=!this.mobFilter
-            }
-    
+    methods:{   
+        openMobFilter(){
+            this.mobFilter=!this.mobFilter
+        }  
     },
     async created(){
         await this.$store.dispatch('getData')
@@ -52,21 +38,12 @@ export default{
             return this.$store.getters.sortGoods
         },     
         applyFilters(){
-            if(!this.filters.length){
-                // return this.sortGoods
-                return this.getProducts
-            }else{
-            //    let arr=this.sortGoods;
-               let arr=this.getProducts
-                for(let i=0;i<this.filters.length;i++){               
-                    arr=arr.filter(good=>good[this.filters[i]]==true)
-                    if(i==this.filters.length-1){
-                        console.log(i)
-                        return arr
-                    }                 
-                }              
-            }         
+            return this.$store.getters['filter/applyFilters']
         },
+        getSwitches(){
+            return this.$store.state.filter.switches
+        }
+
     },
     template:/*html*/ `
     <div class="filter__outer" :class="{d_m_vis:mobFilter}">
@@ -74,10 +51,12 @@ export default{
             <div class="filter-tab d_none"></div>
             <button class="delete-btn delete-btn__filt d_none" @click="openMobFilter"><i class="gg-math-plus r45"></i></button>
             <div class="filter" >
-                <Switch v-for='item in switches' :switches="item" v-model="filters" ></Switch>
+                <Switch v-for='item in getSwitches' :switches="item" ></Switch>
+                
             </div>
         </div>
     </div>
+
     <main class="content">
         <div class="d-flex sort-bar">
             <div class="quatity">

@@ -12,28 +12,10 @@ export default{
     },
     data(){
         return {
-    
-            filters:[],
-            switches:[
-                { value:'new', name:'Новинки'},
-                { value:'has', name:'Есть в наличии'},
-                { value:'contract', name:'Контрактные'},
-                { value:'exclusice', name:'Эксклюзивные'},
-                { value:'sale', name:'Распродажа'},
-            ],
-            mobFilter:false
                  
         }
     },
     methods:{ 
-        addFilter(event){
-            console.log(event)
-            this.filters.push(event)
-        },
-  
-        openMobFilter(){
-            this.mobFilter=!this.mobFilter
-        }
 
     },
     async created(){
@@ -51,24 +33,7 @@ export default{
         getProducts(){
             return this.$store.getters.sortGoods
         },     
-        applyFilters(){
-            if(!this.filters.length){
-                // return this.sortGoods
-                return this.getProducts
-            }else{
-            //    let arr=this.sortGoods;
-               let arr=this.getProducts
-                for(let i=0;i<this.filters.length;i++){               
-                    arr=arr.filter(good=>good[this.filters[i]]==true)
-                    if(i==this.filters.length-1){
-                        console.log(i)
-                        return arr
-                    }                 
-                }              
-            }         
-        },
-        
-           
+          
     },
     watch:{
 

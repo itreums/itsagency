@@ -1,4 +1,5 @@
 export const cartModule = {
+    namespaced:true,
     state(){
         return{
             enabled:false,
@@ -55,5 +56,6 @@ export const cartModule = {
     actions:{
 
     }
-    ,namespaced:true
+    ,
+    
 }

@@ -1,5 +1,9 @@
+import Card from "../ui/Card.js"
 export default{
     name:'product',
+    components:{
+        Card
+    },
     props:['good'],
     data(){
         return {
@@ -20,7 +24,7 @@ export default{
         this.getProduct()
     },
     template: /*html */ `
-        <div class="">{{product}}</div>
+        <Card :good="product"></Card>
     `
 
 }
