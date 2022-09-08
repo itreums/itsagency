@@ -45,7 +45,7 @@ export default{
                 <ul>
                     <li class="br-main"><a href="#">главная</a></li>
                     <li><a href="#">продукты</a></li>
-                    <li><router-link to="/">краски</router-link></li>
+                    <li><router-link to="/itsagency">краски</router-link></li>
                 </ul>
             </div>
         </div>
