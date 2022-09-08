@@ -6,7 +6,7 @@ import Product from "../pages/Product.js"
 const {createRouter, createWebHistory, createWebHashHistory}=VueRouter
 const routes=[
     {
-        path:"/",
+        path:"/itsagency",
         component:Shop,
         name:"shop"
     },
