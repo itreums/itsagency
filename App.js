@@ -92,8 +92,6 @@ export default{
         
         <div class="d-flex container">
             <router-view></router-view>
-            
-
         </div>
         
         <footer class="footer"></footer>
