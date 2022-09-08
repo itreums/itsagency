@@ -1,23 +1,17 @@
 export default{
     name:"Cart",
     props:{
-        selectedGoods:Array,
-        isCartOpen:Boolean,
-        getQuatitityCart:Number
+    
     },
     methods:{
         toggleCart(){
-            this.$emit('toggleCart')
+            this.$store.commit('cart/toggleCart')
         },
         clearCart(){
-            this.$emit('clearCart')
+            this.$store.commit('cart/clearCart')
         },
         removeFromCart(event){
-            let index=this.selectedGoods.indexOf(event)
-            if(index>-1){
-                this.selectedGoods.splice(index,1)
-            }
-            // console.log(index)
+            this.$store.commit('cart/removeFromCart',event)
         },
         increaseQuantity(event){
             console.log(event)
@@ -33,26 +27,25 @@ export default{
     },
     computed:{
         getTotalPrice(){
-            let total=0
-            for(let good of this.selectedGoods){
-                total+=parseFloat(good.totalPrice)
-            }
-            return total
+            return this.$store.getters['cart/getTotalPrice']
         },
+        getQuantityCart(){
+            return this.$store.getters['cart/getQuantityCart']
+        } 
     },
     template:/*html */ `
-    <div class="modal"  v-if="isCartOpen">
+    <div class="modal"  v-if="$store.state.cart.enabled">
         <div class="cart">
             <div class="d-center cart__title">
                 <div class="">Корзина</div>
                 <button class="close-btn" @click="toggleCart"><i class="gg-math-plus r45"></i></button>
             </div>
             <div class="d-center cart-info cart__info">
-                <div class="cart__info__all-product-quantity quantityGoods">{{getQuatitityCart}} {{$filters.suffix(getQuatitityCart)}}</div>
+                <div class="cart__info__all-product-quantity quantityGoods">{{getQuantityCart}} {{$filters.suffix(getQuantityCart)}}</div>
                 <div class=" cart__info__clear-cart-btn clearCart" @click="clearCart">Очистить список</div>
             </div>
             <div class="listOfGoodsInCart cart__products-list-wrap" >
-                <div class="cart__product-card goodInCart d-flex" v-for="good in selectedGoods" :key="good.id">
+                <div class="cart__product-card goodInCart d-flex" v-for="good in $store.state.cart.selectedGoods" :key="good.id">
                     <div class="cart__wrap-img">
                         <img :src="good.image" alt="">
                     </div>

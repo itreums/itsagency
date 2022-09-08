@@ -14,16 +14,21 @@ export default{
         }
     },
     props:{
-        getQuatitityCart:Number
+    
     },
     methods:{
         toggleCart(){
-            this.$emit('toggleCart')
+            this.$store.commit('cart/toggleCart')
         },
         openMobMenu(){
             console.log("mobmenu")
             this.mobMenu=!this.mobMenu
         }
+    },
+    computed:{
+        getQuantityCart(){
+            return this.$store.getters['cart/getQuantityCart']
+        } 
     },
     template: /*html*/ `
     <header class="d-flex header">
@@ -64,9 +69,9 @@ export default{
                 <button class="panel__btn m_none"><i class="gg-search"></i></button>
                 <button class="panel__btn m_none"><i class="gg-user"></i></button>
                 <button class="panel__btn m_none"><i class="gg-heart"></i></button>
-                <button class="panel__btn" :class="{panel__btn_cart:getQuatitityCart}" @click="toggleCart" >
-                    <span v-if="getQuatitityCart==0"><i class="gg-shopping-bag"></i></span>
-                    <span v-else>{{getQuatitityCart}}</span>
+                <button class="panel__btn" :class="{panel__btn_cart:getQuantityCart}" @click="toggleCart" >
+                    <span v-if="getQuantityCart==0"><i class="gg-shopping-bag"></i></span>
+                    <span v-else>{{getQuantityCart}}</span>
                 </button>
             </div>
         </div>

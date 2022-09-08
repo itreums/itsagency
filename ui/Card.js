@@ -5,7 +5,7 @@ export default{
     ,
     methods:{
         addToCart(good){
-            this.$emit('addToCart',good)
+            this.$store.commit('cart/addGoodInCart',good)
         }
     },
     template:/*html*/`
