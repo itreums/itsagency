@@ -30,20 +30,17 @@
         margin-bottom: 15px;
     }
     &__price-bar{
+        display: flex;
         margin-top: auto;
         padding-bottom: 14px;
         align-items: center;
         justify-content: space-between;
         border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
-        
-        &__price{
-            font-weight: 600;
-            font-size: 16px;
-            line-height: 100%;
-        }
-        &__wrap-btn{
-
-        }
+    }
+    &__price{
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 100%;
     }
     &__btn{
         width: 80px;
@@ -59,14 +56,11 @@
         &:hover{
             background:#57be63;
         }
-        &:focus{
-            /* background:#9348b1; */
-        }
         &:active{
             background:#2a6431;
         }
     }
-    &:hover .price-bar__wrap-btn{
+    &:hover &__add-btn{
          visibility: visible;
     }
 }
@@ -108,11 +102,18 @@
 }
 @media (max-width: 767.98px) { 
     .card{
-        
+        &__btn{
+            visibility: visible!important;
+            height: 24px;
+            width: 40px;
+            background: #F2F2F2;
+            border-radius: 6px;
+            & i{
+                transform: scale(0.7);
+            }
+        }
     }
 }
 @media (max-width: 575.98px) { 
-    .card{
-        
-    }
+   
 }

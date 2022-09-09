@@ -37,56 +37,20 @@ html,body, *{
     content: "• ";
     color: #FFFFFF;
     opacity: 0.3;
-  }
+}
+
+.title-p{
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 88%;
+    letter-spacing: -0.04em;
+    color: #1F2020;
+    padding: 36px 24px;
+}
 .container{
     flex-wrap: nowrap;
     padding: 72px 64px
 }
-
-.filter{
-    min-width: 300px;
-}
-.filter-tab{
-    margin-left: auto;
-    margin-right: auto;
-    width: 28px;
-    height: 4px;
-    background: #1F2020;
-    opacity: 0.6;
-    border-radius: 40px;
-    
-}
-.delete-btn__filt{
-    margin-left: auto;
-    margin-bottom: 14px;
-    color: #1F2020;
-    background: none;
-}
-.content{
-    width: 100%;  
-}
-
-
-
-.sort-row{
-    display: flex;
-    padding: 2px 12px 12px 12px;
-    justify-content: space-between;
-    &__title{
-        text-transform: uppercase;
-        font-weight: 500;
-        font-size: 12px;
-        line-height: 15px;
-    }
-}
-
-
-
-
-.goods{
-    position: relative;
-}
-
 .footer{
     margin-top: auto;
     height: 200px;
@@ -101,14 +65,7 @@ html,body, *{
     left: 0;
     z-index: 999;
 }
-.title-p{
-    font-weight: 400;
-    font-size: 36px;
-    line-height: 88%;
-    letter-spacing: -0.04em;
-    color: #1F2020;
-    padding: 36px 24px;
-}
+
 
 
 @media (max-width: 1399.98px) { 
@@ -118,18 +75,11 @@ html,body, *{
    
 }
 @media (max-width: 991.98px) { 
-    .filter{
-        min-width: 200px;
-    }
-    
+       
 }
 @media (max-width: 767.98px) { 
     .container{
         padding:0 12px ;
-    }
-    .filter{
-        position: absolute;
-        display: none;
     }
     .slider{
         display: none;
@@ -148,50 +98,6 @@ html,body, *{
     .breadcrumbs ul li:not(.br-main)::before {   
         content: "• ";
         color: gray;
-      }
-      .cart{
-        width: 100%;
-        padding: 12px;
-      }
-      
-      .card__btn{
-        visibility: visible!important;
-        height: 24px;
-        width: 40px;
-        background: #F2F2F2;
-        border-radius: 6px;
-      }
-      .card__btn i{
-        transform: scale(0.7);
-      }
-      .filters-btn{
-        display: inline!important;
-        cursor: pointer;
-    }
-    .filter__outer{
-        width: 100%;
-        height: 100%;
-        position: fixed;
-        left: 0;
-        background: #000000a8;
-        top: 0;
-        z-index: 9;
-        display: none;
-    }
-    .filter__inner{
-        top: 120px;
-        background: #f1f1f1;
-        position: relative;
-        height: inherit;
-        border-radius: 24px 24px 0 0;
-        padding: 12px 24px;
-    
-    }
-    .filter-tab, .delete-btn__filt{
-        display: flex!important;
-    }
-    .filter{
-        display: block!important;
     }
     .title-p{
         display: block!important;
