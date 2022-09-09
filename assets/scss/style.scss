@@ -66,16 +66,23 @@ html,body, *{
     width: 100%;  
 }
 
-.quatity{
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 15px;
-}
-.sort-bar{
+
+
+.sort-row{
+    display: flex;
     padding: 2px 12px 12px 12px;
     justify-content: space-between;
+    &__title{
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 15px;
+    }
 }
+
+
+
+
 .goods{
     position: relative;
 }
@@ -192,15 +199,6 @@ html,body, *{
       
 }
 @media (max-width: 575.98px) { 
-    .cart__btn-group-count{
-        flex-direction: column;
-        margin-right: 0;
-      }
-    .quantity {
-        width: auto;
-    }
-    .cart__wrap-img {
-        width: 80px;
-        height: 80px;
-    }
+    
+    
 }

@@ -58,11 +58,15 @@ export default{
     </div>
 
     <main class="content">
-        <div class="d-flex sort-bar">
-            <div class="quatity">
-                <div class="m_none">{{applyFilters.length}} {{$filters.suffix(applyFilters.length)}}</div>
-                <div class="filters-btn d_none" @click="openMobFilter">Фильтры</div>
+        <div class="sort-row">
+            <div class="sort-row__title m_none">
+                <div class="sort-row__product-count">{{applyFilters.length}} {{$filters.suffix(applyFilters.length)}}</div>
             </div>
+            <div class="sort-row__title">
+                <div class="sort-row__filters-btn filters-btn d_none" @click="openMobFilter">Фильтры</div>
+            </div>
+
+
             <div class="sorting">
                 <Select v-model="sorting"></Select>
             </div>
