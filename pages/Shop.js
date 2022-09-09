@@ -65,9 +65,7 @@ export default{
             <div class="sort-row__title">
                 <div class="sort-row__filters-btn filters-btn d_none" @click="openMobFilter">Фильтры</div>
             </div>
-
-
-            <div class="sorting">
+            <div class="sort-row__sort">
                 <Select v-model="sorting"></Select>
             </div>
         </div>

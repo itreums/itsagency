@@ -40,13 +40,19 @@ export default{
     },
     template:/*html*/`
 
-        <div class="sort_active" @click="openSort">{{activeSelect}}</div>
-        
-        <div class="sort" v-show="showSort">
-            <div class="" v-for="item in selects" >
-                <input readonly type="text" :key="item.value" :value="item.name"  @click="openSort(); changeSort($event);">
+        <div class="select">
+            <div class="select__active" @click="openSort">{{activeSelect}}</div>
+            
+            <div class="select__list" v-show="showSort">              
+                    <input readonly 
+                        type="text" 
+                        v-for="item in selects" 
+                        :key="item.value" 
+                        :value="item.name"  
+                        @click="openSort(); changeSort($event);"
+                    >
             </div>
+            <div class="modal" v-show="showSort"></div>
         </div>
-        <div class="modal" v-show="showSort"></div>
     `   
 }
